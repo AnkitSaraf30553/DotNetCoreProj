@@ -28,6 +28,12 @@ namespace Gym.Controllers
             return View();
         }
 
+        public IActionResult ContactUs()
+        {
+            List<string> lst = new List<string> { "Abc", "Xyz" };
+            return View(lst);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

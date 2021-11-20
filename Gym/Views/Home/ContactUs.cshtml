@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "ContactUs";
+}
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page mention contact us details.</p>
+
+@{ 
+    foreach(var x in Model)
+            {
+                <p>Item Name: @x</p>
+            }
+}
+
+@section Scripts{ 
+    <script>
+
+    </script>
+}

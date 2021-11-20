@@ -1,0 +1,119 @@
+﻿@model GymModels.Applicant
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h1>Register</h1>
+
+<h4>Applicant</h4>*@
+<hr />
+<div class="row">
+    <div class="col-md-12" style="text-align:left">
+        <div id="PhotoPathimg"><img id="uploadedimage" class="uploadedimage" src="~/images/nouser.jpg" /></div>
+        <p>
+            <input type="button" class="btn btn-warning cambutton" value="capture" id="capture" data-toggle="modal" data-target="#myModal" />
+            <input type="button" class="btn btn-warning cambutton" value="Upload" id="Upload" />
+            
+        </p>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12 registrationformback">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="FahterName" class="control-label"></label>
+                    <input asp-for="FahterName" class="form-control" />
+                    <span asp-validation-for="FahterName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Mobile" class="control-label"></label>
+                    <input asp-for="Mobile" class="form-control" />
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="AdmissionDate" class="control-label"></label>
+                    <input asp-for="AdmissionDate" class="form-control" />
+                    <span asp-validation-for="AdmissionDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="IdType" class="control-label"></label>
+                    <input asp-for="IdType" class="form-control" />
+                    <span asp-validation-for="IdType" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="IdNumber" class="control-label"></label>
+                    <input asp-for="IdNumber" class="form-control" />
+                    <span asp-validation-for="IdNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Package" class="control-label"></label>
+                    <input asp-for="Package" class="form-control" />
+                    <span asp-validation-for="Package" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="ExpiryDate" class="control-label"></label>
+                    <input asp-for="ExpiryDate" class="form-control" />
+                    <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check col-md-4" style=" margin-top: 40px; margin-left: 15px;">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label"></label>
+                <input asp-for="PhotoPath" class="nodisplay"/>
+
+            </div>
+            <div class="form-group" style="text-align:center">
+                <input type="submit" value="Create/Modify Applicant" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body" id="cammodalbody">
+                <div class="row">
+
+                    <div class="col-md-8" id="my_camera">
+
+                    </div>
+                    <div class="col-md-4" style="margin-top:75px;">
+                        <input type="button" id="takesnap" class="btn btn-danger" value="capture" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{ 
+<script src="~/js/Register/Register.js" type="text/javascript"></script>
+}
+
